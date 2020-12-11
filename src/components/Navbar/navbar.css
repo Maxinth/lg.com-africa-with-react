@@ -1,0 +1,150 @@
+nav {
+  width: 100%;
+  border-bottom: 1px solid var(--bottom-border-clr);
+}
+
+.navbar__desktop,
+.navbar__mobile {
+  transition: var(--transition);
+}
+.navbar__mobileLinks {
+  display: flex;
+}
+
+.navbar__mobileNavLinks {
+  width: 100%;
+  display: block;
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  font-family: "Lato", sans-serif;
+  color: #333;
+}
+
+.navbar__mobileNavLinks:nth-child(2) {
+  background-color: var(--lg-clr);
+  color: #fff;
+}
+
+.navbar__searchIcon {
+  transition: var(--transition);
+}
+
+.navbar__searchIcon.shown {
+  opacity: 1;
+}
+
+.navbar__searchIcon.hidden {
+  opacity: 0;
+}
+.navbar__mobileNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+.navbar__mobileNav > div > svg {
+  padding-right: 0.5rem;
+}
+.navbar__mobileNav svg {
+  font-size: 2.2rem !important;
+}
+
+.navbar__mobileNav img {
+  width: 50px;
+  object-fit: contain;
+}
+
+.navbar__desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .navbar__mobile {
+    display: none;
+  }
+
+  .navbar__desktop {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    padding-top: 0.2rem;
+    justify-content: space-between;
+    font-family: "Lato", sans-serif;
+  }
+  .navbar__topLinks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-bottom: 1px solid rgb(218, 211, 211);
+    padding-bottom: 1rem;
+  }
+
+  .navbar__topLinks a.align-end {
+    text-align: right;
+  }
+
+  .navbar__bottomLinks {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding-top: 0.2rem;
+  }
+
+  .navbar__bottomLinks div {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar__bottomLinks div a {
+    width: 8rem;
+  }
+  .navbar__bottomLinks div a:hover {
+    color: var(--lg-clr);
+  }
+
+  .navbar__bottomLinks div a:nth-child(2) {
+    margin-left: -1.9rem;
+  }
+
+  .navbar__bottomLinks div a:first-child::after {
+    content: " | ";
+    padding-left: 0.5rem;
+    color: var(--bottom-border-clr);
+    /* font-size: 1.2rem; */
+    font-weight: 400;
+  }
+  .navbar__desktop a {
+    width: 100%;
+    display: block;
+    flex: 1;
+    margin-left: auto;
+  }
+
+  .navbar__desktop > div {
+    display: flex;
+    /* align-items: center; */
+    width: 100%;
+    flex-direction: column;
+    /* margin-top: -0.5rem; */
+    padding: 1rem 2rem;
+    padding-left: 3rem;
+  }
+  .navbar__desktop img {
+    width: 100px;
+  }
+
+  .align-end svg {
+    font-size: 1.8rem;
+  }
+  .align-end > svg:first-child {
+    margin-right: 0.7rem;
+  }
+}
