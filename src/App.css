@@ -12,6 +12,10 @@
   --lg-clr: #a50034;
   --transition: all 0.3s linear;
 }
+
+.App svg {
+  cursor: pointer;
+}
 ul,
 li {
   list-style-type: none;

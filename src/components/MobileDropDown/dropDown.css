@@ -34,17 +34,14 @@
   overflow: auto;
 }
 
-/* .mobileDropDown__moreDetails.hidden {
-  
-  display: none;
-}
-.mobileDropDown__moreDetails.shown {
-  
-  display: block;
-} */
 .mobileDropDown__nav {
   background: #fff;
   /* padding-top: 2rem; */
+}
+
+.mobileDropDown__listItem:first-child {
+  border-top: 1px solid rgb(206, 204, 204);
+  margin-top: 0.5rem;
 }
 .mobileDropDown__listItem {
   display: flex;
@@ -53,6 +50,7 @@
   justify-content: space-between;
   padding: 1rem 1rem;
   font-size: 0.9rem;
+  border-bottom: 1px solid rgb(206, 204, 204);
 }
 
 .mobileDropDown__listItem.account {

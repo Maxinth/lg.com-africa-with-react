@@ -15,6 +15,40 @@ const AppProvider = ({ children }) => {
   const toggleSearch = () => setIsSearchInView(!isSearchInView);
   const closeSearchBox = () => setIsSearchInView(false);
 
+  // state for displaying more details based on listItem (ON MOBILE and SMALL SCREENS)
+
+  const [showDetails, setShowDetails] = useState({
+    tv: false,
+    homeAppliances: false,
+    ac: false,
+    computer: false,
+    support: false,
+  });
+
+  const backToInitial = () => {
+    setShowDetails({
+      tv: false,
+      homeAppliances: false,
+      ac: false,
+      computer: false,
+      support: false,
+    });
+  };
+
+  const itemClicked = (id) => {
+    toggleNavItems();
+    // if (e.target.id === id) {
+    setShowDetails({
+      tv: false,
+      homeAppliances: false,
+      ac: false,
+      computer: false,
+      support: false,
+      [`${id}`]: true,
+    });
+    //  }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -25,6 +59,9 @@ const AppProvider = ({ children }) => {
         toggleSearch,
         closeSearchBox,
         isSearchInView,
+        itemClicked,
+        showDetails,
+        backToInitial,
       }}
     >
       {children}

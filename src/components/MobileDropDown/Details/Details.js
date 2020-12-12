@@ -6,11 +6,16 @@ import "./details.css";
 import { useGlobalContext } from "../../Context";
 
 const Details = ({ mainTitle, list = [] }) => {
-  const { toggleNavItems } = useGlobalContext();
+  const { toggleNavItems, backToInitial } = useGlobalContext();
+
+  const toggleViewAndRevert = () => {
+    toggleNavItems();
+    backToInitial();
+  };
   return (
     <section className="details">
       <h4 className="details__mainTitle">
-        <HomeIcon onClick={toggleNavItems} />
+        <HomeIcon onClick={toggleViewAndRevert} />
         <span>{mainTitle}</span>
       </h4>
       <ul className="details__nav">
@@ -22,13 +27,15 @@ const Details = ({ mainTitle, list = [] }) => {
                 {" "}
                 {navTitle} <ArrowForwardIosIcon />
               </span>
-              <ul className="details__innerNav">
-                {items.map((innerItem, index) => (
-                  <li className="details__innerListItem" key={index}>
-                    {innerItem}
-                  </li>
-                ))}
-              </ul>
+              {items.length !== 0 && (
+                <ul className="details__innerNav">
+                  {items.map((innerItem, index) => (
+                    <li className="details__innerListItem" key={index}>
+                      {innerItem}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           );
         })}
