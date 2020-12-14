@@ -69,18 +69,23 @@ const MobileDropDown = () => {
     } else if (showDetails.support) {
       amount = 70;
     } else {
-      amount = 0; // initial view when home is clicked from the other details components
+      amount = 50; // initial view when home is clicked from the other details components
     }
     return backdropTop + amount;
   };
 
+  const titleTextClass = showNavItems ? "shown" : "hidden"; // toggling visibility using opacity
   return (
     <section
       className="mobileDropDown"
       style={{ height: `${currentHeight}px` }}
     >
       <div ref={dropDiv}>
-        <h3>LG ThinQ</h3>
+        <h3>
+          <span className={`mobileDropDown__titleText ${titleTextClass}`}>
+            LG ThinQ
+          </span>
+        </h3>
         {/* ==== mobileSearchBox initially hidden via its opacity  =====*/}
         <MobileSearchBox />
         {/* which is toggled between 0 and 1 via the nav-search icon click */}

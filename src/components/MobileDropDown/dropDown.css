@@ -39,6 +39,15 @@
   /* padding-top: 2rem; */
 }
 
+.mobileDropDown__titleText {
+  transition: var(--transition);
+}
+.mobileDropDown__titleText.shown {
+  opacity: 1;
+}
+.mobileDropDown__titleText.hidden {
+  opacity: 0;
+}
 .mobileDropDown__listItem:first-child {
   border-top: 1px solid rgb(206, 204, 204);
   margin-top: 0.5rem;
@@ -51,6 +60,7 @@
   padding: 1rem 1rem;
   font-size: 0.9rem;
   border-bottom: 1px solid rgb(206, 204, 204);
+  cursor: pointer;
 }
 
 .mobileDropDown__listItem.account {

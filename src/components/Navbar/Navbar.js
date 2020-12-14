@@ -9,10 +9,14 @@ import desktopLogo from "../../assets/logo-b2c.jpg";
 import "./navbar.css";
 import MobileDropDown from "../MobileDropDown/MobileDropDown";
 import { useGlobalContext } from "../Context";
+import MobileSearchBox from "../MobileDropDown/MobileSearchBox";
 
 const Navbar = () => {
   const { bar, toggleBar, toggleSearch } = useGlobalContext();
   const mobileSearchClass = bar ? "shown" : "hidden";
+  // state for searchBox on desktop
+  const [showSearch, setShowSearch] = useState(false);
+  const toggleSearchView = () => setShowSearch(!showSearch);
   return (
     <>
       <nav>
@@ -54,24 +58,51 @@ const Navbar = () => {
               </NavLink>
             </section>
             <section className="navbar__bottomLinks">
-              <div>
-                <NavLink to="/">Products</NavLink>
-                <NavLink to="/">Support Home</NavLink>
+              <div className="navbar__bottomLeft">
+                <section className="navbar__productItems">
+                  <NavLink to="/" className="navbar__Links">
+                    <span className="navbar__Item">
+                      TV & HOME ENTERTAINMENT{" "}
+                    </span>
+                  </NavLink>
+
+                  <NavLink to="/" className="navbar__Links">
+                    <span className="navbar__Item">HOME APPLIANCES</span>
+                  </NavLink>
+
+                  <NavLink to="/" className="navbar__Links">
+                    <span className="navbar__Item">AIR CONDITIONERS </span>
+                  </NavLink>
+
+                  <NavLink to="/" className="navbar__Links">
+                    <span className="navbar__Item">COMPUTER PRODUCTS </span>
+                  </NavLink>
+                </section>
+                <div className="navbar__productAndSupport">
+                  <NavLink to="/" className="navbar__Links navbar__productLink">
+                    <span className="navbar__Item">Products</span>
+                  </NavLink>
+
+                  <NavLink to="/" className="navbar__Links navbar__supportLink">
+                    <span className="navbar__Item">Support Home</span>
+                  </NavLink>
+                </div>
               </div>
-              <div className="align-end">
-                <PersonOutlineOutlinedIcon />
-                <SearchRoundedIcon />
+              <div className="navbar__bottomRight">
+                {!showSearch ? (
+                  <>
+                    <PersonOutlineOutlinedIcon />
+                    <SearchRoundedIcon onClick={toggleSearchView} />
+                  </>
+                ) : (
+                  <MobileSearchBox toggleView={toggleSearchView} /> // controlling the view via STATE only - see MobileSearchBox for more info
+                )}
               </div>
             </section>
           </div>
         </header>
       </nav>
-      <MobileDropDown
-      // bar={bar}
-      // toggleBar={toggleBar}
-      // search={isSearchInView}
-      // closeSearchBox={closeSearchBox}
-      />
+      <MobileDropDown />
     </>
   );
 };

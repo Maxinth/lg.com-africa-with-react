@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
   const [bar, setBar] = useState(false);
   const toggleBar = () => setBar(!bar);
 
-  // state for search input
+  // state for search on mobile Screens
   const [isSearchInView, setIsSearchInView] = useState(false);
   const toggleSearch = () => setIsSearchInView(!isSearchInView);
   const closeSearchBox = () => setIsSearchInView(false);
