@@ -18,7 +18,7 @@
 }
 .mobileSearch__form > div {
   background: #fff;
-  border: 1px solid rgb(212, 208, 208);
+  border: 1px solid rgb(92, 92, 92);
   border-right: unset;
   border-radius: 0.2em;
   display: flex;
@@ -36,6 +36,7 @@
   border-top-left-radius: unset;
   border-bottom-left-radius: unset;
   margin-left: -1rem;
+  cursor: pointer;
 }
 .mobileSearch__form {
   display: flex;

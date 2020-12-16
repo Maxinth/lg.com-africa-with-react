@@ -31,6 +31,10 @@ export default {
           "Loudr",
         ],
       },
+      {
+        navTitle: "BLU-RAY/DVD PLAYERS",
+        items: ["DVD Players"],
+      },
     ],
   },
 
@@ -164,6 +168,53 @@ export default {
       {
         navTitle: "MY ACCOUNT",
         items: [],
+      },
+    ],
+  },
+
+  supportHomeDesktop: {
+    mainTitle: "support home",
+    // list to iterate over
+    list: [
+      {
+        navTitle: "GUIDE & DOWNLOAD",
+        items: [
+          "How-to & Tips",
+          "Video Tutorials",
+          "Manuals",
+          "Software & Firmware",
+        ],
+      },
+      {
+        navTitle: "GENUINE CHECK",
+        items: [],
+      },
+      {
+        navTitle: "CONTACT US",
+        items: [
+          "Email",
+          "Telephone",
+          "Inquiry Status",
+          "Customer, Feedback",
+          "WhatsApp",
+          "Care & Delight Mobile App",
+        ],
+      },
+      {
+        navTitle: "REGISTER A PRODUCT",
+        items: [],
+      },
+      {
+        navTitle: "ANNOUNCEMENT",
+        items: [],
+      },
+      {
+        navTitle: "REPAIR SERVICE",
+        items: ["Request a Repair", "Track a Repair", "Find a Service Center"],
+      },
+      {
+        navTitle: "MY ACCOUNT",
+        items: ["My Profile", "My Products", "My Inquiry Status"],
       },
     ],
   },

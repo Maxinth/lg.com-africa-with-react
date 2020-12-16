@@ -10,13 +10,33 @@ import "./navbar.css";
 import MobileDropDown from "../MobileDropDown/MobileDropDown";
 import { useGlobalContext } from "../Context";
 import MobileSearchBox from "../MobileDropDown/MobileSearchBox";
+import NavProductItems from "./NavProductItems";
+import NavProducts from "./NavProducts";
+import NavMoreDetails from "./NavMoreDetails";
 
 const Navbar = () => {
-  const { bar, toggleBar, toggleSearch } = useGlobalContext();
-  const mobileSearchClass = bar ? "shown" : "hidden";
+  const {
+    bar,
+    toggleBar,
+    toggleSearch,
+    isSearchInView,
+    showItems,
+    productsItemsInView,
+    bothItemsHidden,
+    supportInView,
+  } = useGlobalContext();
+  // respective classNames due to bar or search states before and after a toggle
+  const dueToBarState = bar ? "shown" : "hidden";
+  const dueToSearchState = isSearchInView ? "" : "inView";
   // state for searchBox on desktop
   const [showSearch, setShowSearch] = useState(false);
   const toggleSearchView = () => setShowSearch(!showSearch);
+
+  // function returning a className to change the visual appearance of the item currently in view
+  const colorWhenTrue = (condition) => {
+    return condition ? "lg" : "";
+  };
+
   return (
     <>
       <nav>
@@ -39,7 +59,7 @@ const Navbar = () => {
               )}
               <SearchRoundedIcon
                 onClick={toggleSearch}
-                className={`navbar__searchIcon ${mobileSearchClass}`}
+                className={`navbar__searchIcon ${dueToBarState} ${dueToSearchState}`}
               />
             </div>
             <img src={mobileLogo} alt="mobile lg" />
@@ -51,47 +71,55 @@ const Navbar = () => {
         <header className="navbar__desktop">
           <img src={desktopLogo} alt="desktop lg" />
           <div>
-            <section className="navbar__topLinks">
+            {/* hide the both products and support items when mouse hovers into this top section */}
+            <section
+              className="navbar__topLinks"
+              onMouseEnter={bothItemsHidden}
+            >
               <NavLink to="/">LG ThinQ</NavLink>
               <NavLink to="/" className="align-end">
                 For Business
               </NavLink>
             </section>
+            {/* hide the both products and support items when mouse hovers into this top section */}
             <section className="navbar__bottomLinks">
               <div className="navbar__bottomLeft">
-                <section className="navbar__productItems">
-                  <NavLink to="/" className="navbar__Links">
-                    <span className="navbar__Item">
-                      TV & HOME ENTERTAINMENT{" "}
+                <NavProductItems />
+                <div className="navbar__productAndSupport">
+                  <NavLink
+                    to="/"
+                    className="navbar__Links navbar__productLink"
+                    onMouseEnter={productsItemsInView}
+                    // onMouseLeave={productsItemsHidden}
+                  >
+                    <span
+                      className={`navbar__Item ${colorWhenTrue(
+                        showItems.products
+                      )}`}
+                    >
+                      Products
                     </span>
                   </NavLink>
 
-                  <NavLink to="/" className="navbar__Links">
-                    <span className="navbar__Item">HOME APPLIANCES</span>
-                  </NavLink>
-
-                  <NavLink to="/" className="navbar__Links">
-                    <span className="navbar__Item">AIR CONDITIONERS </span>
-                  </NavLink>
-
-                  <NavLink to="/" className="navbar__Links">
-                    <span className="navbar__Item">COMPUTER PRODUCTS </span>
-                  </NavLink>
-                </section>
-                <div className="navbar__productAndSupport">
-                  <NavLink to="/" className="navbar__Links navbar__productLink">
-                    <span className="navbar__Item">Products</span>
-                  </NavLink>
-
-                  <NavLink to="/" className="navbar__Links navbar__supportLink">
-                    <span className="navbar__Item">Support Home</span>
+                  <NavLink
+                    to="/"
+                    className="navbar__Links navbar__supportLink"
+                    onMouseEnter={supportInView}
+                  >
+                    <span
+                      className={`navbar__Item ${colorWhenTrue(
+                        showItems.support
+                      )}`}
+                    >
+                      Support Home
+                    </span>
                   </NavLink>
                 </div>
               </div>
               <div className="navbar__bottomRight">
                 {!showSearch ? (
                   <>
-                    <PersonOutlineOutlinedIcon />
+                    <PersonOutlineOutlinedIcon className="navbar__accountIcon" />
                     <SearchRoundedIcon onClick={toggleSearchView} />
                   </>
                 ) : (
@@ -103,6 +131,9 @@ const Navbar = () => {
         </header>
       </nav>
       <MobileDropDown />
+
+      <NavProducts showItems={showItems.products} />
+      <NavMoreDetails />
     </>
   );
 };

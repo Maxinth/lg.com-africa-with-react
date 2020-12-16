@@ -16,7 +16,7 @@ const MobileDropDown = () => {
     bar,
     toggleBar,
     showDetails,
-    itemClicked,
+    makeCurrentItem,
     // closeSearchBox,
     // isSearchInView,
   } = useGlobalContext();
@@ -54,7 +54,7 @@ const MobileDropDown = () => {
     }
   }, [showNavItems]);
 
-  // a function which adds to the backdrop offset based on the item clicked upon
+  // a function which adds to the backdrop offset based on the  currentItem upon
   const topOffsetByItem = () => {
     let amount;
     // when each of the details page are in view
@@ -69,7 +69,7 @@ const MobileDropDown = () => {
     } else if (showDetails.support) {
       amount = 70;
     } else {
-      amount = 50; // initial view when home is clicked from the other details components
+      amount = 150; // initial view when hom currentItem from the other details components
     }
     return backdropTop + amount;
   };
@@ -90,36 +90,36 @@ const MobileDropDown = () => {
         <MobileSearchBox />
         {/* which is toggled between 0 and 1 via the nav-search icon click */}
 
-        {/* this nav is unmounted when showNavItems becomes false -  this event together with the specific item clicked brings the details component into view */}
+        {/* this nav is unmounted when showNavItems becomes false -  this event together with the specific  currentItem brings the details component into view */}
         {showNavItems && (
           <ul className="mobileDropDown__nav">
             <li
               className="mobileDropDown__listItem"
-              onClick={() => itemClicked("tv")}
+              onClick={() => makeCurrentItem("tv")}
             >
               tv & home entertainment <ArrowForwardIosOutlinedIcon />
             </li>
             <li
               className="mobileDropDown__listItem"
-              onClick={() => itemClicked("homeAppliances")}
+              onClick={() => makeCurrentItem("homeAppliances")}
             >
               home appliances <ArrowForwardIosOutlinedIcon />
             </li>
             <li
               className="mobileDropDown__listItem"
-              onClick={() => itemClicked("ac")}
+              onClick={() => makeCurrentItem("ac")}
             >
               air conditioners <ArrowForwardIosOutlinedIcon />
             </li>
             <li
               className="mobileDropDown__listItem"
-              onClick={() => itemClicked("computer")}
+              onClick={() => makeCurrentItem("computer")}
             >
               computer products <ArrowForwardIosOutlinedIcon />
             </li>
             <li
               className="mobileDropDown__listItem"
-              onClick={() => itemClicked("support")}
+              onClick={() => makeCurrentItem("support")}
             >
               support home <ArrowForwardIosOutlinedIcon />
             </li>
@@ -129,9 +129,9 @@ const MobileDropDown = () => {
           </ul>
         )}
 
-        {/* moreDetails section housing the details of the specific item clicked. it is followed by the corresponding backdrop */}
+        {/* moreDetails section housing the details of the specific  currentItem. it is followed by the corresponding backdrop */}
         <section className={`mobileDropDown__moreDetails `} ref={detailsRef}>
-          {/* when showNavItems becomes false and one of the details component is clicked - only that
+          {/* when showNavItems becomes false and one of the details component currentItem - only that
           component is mounted */}
           {!showNavItems && showDetails.tv && <TvAndHome />}
           {!showNavItems && showDetails.homeAppliances && <HomeAppliances />}
@@ -139,11 +139,11 @@ const MobileDropDown = () => {
           {!showNavItems && showDetails.computer && <ComputerProducts />}
           {!showNavItems && showDetails.support && <SupportHome />}
         </section>
-        {/* backdrop only gets shown when the bar menu is clicked and set to true */}
+        {/* backdrop only gets shown when the bar men currentItem and set to true */}
         {bar && (
           <div
             className="mobileDropDown__backdrop"
-            onClick={toggleBar} // toggleBar closes the bar when the backdrop is clicked upon
+            onClick={toggleBar} // toggleBar closes the bar when the backdrop currentItem upon
             style={{ top: `${topOffsetByItem()}px` }}
           ></div>
         )}
