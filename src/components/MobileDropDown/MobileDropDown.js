@@ -69,7 +69,7 @@ const MobileDropDown = () => {
     } else if (showDetails.support) {
       amount = 70;
     } else {
-      amount = 150; // initial view when hom currentItem from the other details components
+      amount = -65; // initial view when hom currentItem from the other details components
     }
     return backdropTop + amount;
   };

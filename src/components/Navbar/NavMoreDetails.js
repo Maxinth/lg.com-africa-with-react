@@ -10,14 +10,18 @@ import { useGlobalContext } from "../Context";
 const NavMoreDetails = () => {
   const { productItems, showItems, bothItemsHidden } = useGlobalContext();
   const positionClass = showItems.support ? "supportDetails" : "productItems";
-
+  const displayClass =
+    showItems.support || showItems.products ? "isShown" : "isHidden";
   // showing a border based on the presence of at least child element
   const borderClass =
     showItems.products || showItems.support ? "showBorder" : "";
+
+  // ${ displayClass}`
   return (
     <section
-      className={`navMoreDetails  ${borderClass}`}
-      onMouseLeave={bothItemsHidden} // hide both items when user enters and THEN leaves
+      className={`navMoreDetails  ${borderClass} ${displayClass}`}
+      // hide both items when user enters and THEN leaves
+      onMouseLeave={bothItemsHidden}
     >
       {/* show this part when products are true - then show the component matching the item currently true */}
       {showItems.products && (

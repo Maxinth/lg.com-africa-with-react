@@ -1,0 +1,40 @@
+.mainTitle {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  padding: 1rem 2rem;
+  /* padding-bottom: 2rem; */
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.mainTitle__heading {
+  font-size: calc(1rem + 1vw);
+  transition: var(--transition);
+}
+
+.mainTitle__learnMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+
+  text-transform: uppercase;
+}
+
+.mainTitle__learnMore > a {
+  color: var(--lg-clr);
+}
+.mainTitle__icon {
+  font-size: 0.7rem !important;
+  margin-left: 0.2rem;
+}
+
+.mainTitle__text {
+  border-bottom: 1px solid var(--lg-clr);
+}
+
+@media (min-width: 1326px) {
+  .mainTitle__heading {
+    font-size: 1.8rem;
+  }
+}

@@ -1,12 +1,20 @@
 .navMoreDetails {
   display: none;
   border-bottom: unset;
-  position: relative;
+  /* position: relative; */
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  background-color: #fff;
 }
 
-.navMoreDetails__support {
-  /* margin-top: -4.1rem; */
-  /* transition: var(--transition); */
+.navMoreDetails.isShown {
+  display: block;
+}
+
+.navMoreDetails.isHidden {
+  display: none;
 }
 
 @media (min-width: 768px) {
