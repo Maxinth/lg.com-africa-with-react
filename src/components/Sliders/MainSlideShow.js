@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import SlideCard from "./SlideCard/SlideCard";
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import data from "./SlideCard/slideData";
 import "./mainSlide.css";
 
@@ -21,7 +22,6 @@ function MainSlideShow() {
 
   useEffect(() => {
     let slider = setInterval(() => {
-      console.log("slide after 5s");
       setIndex(index + 1);
     }, 5000);
     return () => {
@@ -62,6 +62,19 @@ function MainSlideShow() {
           <ArrowForwardIosIcon />
         </button>
       </div>
+      {/* slide circle controls  - MOVE IT TO THE BOTTOM */}
+      <section className="mainSlide__circleControls">
+        {items.map((item, itemIndex) => {
+          const circleClass = index === itemIndex ? "lg" : "";
+          return (
+            <FiberManualRecordIcon
+              key={itemIndex}
+              className={`mainSlide__circleIcon ${circleClass}`}
+              onClick={() => setIndex(itemIndex)}
+            />
+          );
+        })}
+      </section>
     </section>
   );
 }

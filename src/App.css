@@ -16,7 +16,14 @@
 .App {
   max-width: 1400px;
   width: 100%;
+  margin-left: 0.05rem;
 }
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .App svg {
   cursor: pointer;
 }

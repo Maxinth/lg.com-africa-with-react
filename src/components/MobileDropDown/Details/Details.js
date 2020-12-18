@@ -7,6 +7,9 @@ import { useGlobalContext } from "../../Context";
 import { motion } from "framer-motion";
 import { IconVariant } from "../../variants";
 import CloseIcon from "@material-ui/icons/Close";
+
+// import image from "../../../assets/africa_gnb_genuine.webp";
+
 const Details = ({ mainTitle, list = [], largerScreens, desktop }) => {
   // the largerScreens prop helps make this component reusable
   const {
@@ -21,12 +24,7 @@ const Details = ({ mainTitle, list = [], largerScreens, desktop }) => {
     backToInitial();
   };
 
-  // the first handler handles the click event when supportItems are shown, the second handles
-  // the click event for all productItems Details - 'tv, ac etc'
-
-  // const closeHandler = () =>
-  //   desktop ? bothItemsHidden() : closeProductItemsView();
-
+  console.log(list);
   return (
     <section className="details">
       <h4 className="details__mainTitle">
@@ -42,11 +40,15 @@ const Details = ({ mainTitle, list = [], largerScreens, desktop }) => {
 
         <span>{mainTitle}</span>
         {/* show this part only on larger screens */}
-        {largerScreens && <CloseIcon onClick={bothItemsHidden} />}
+        {largerScreens && (
+          <CloseIcon onClick={bothItemsHidden} className="details__closeIcon" />
+        )}
       </h4>
       <ul className="details__nav">
         {list.map((eachItem, index) => {
-          const { navTitle, items } = eachItem;
+          const { navTitle, items, image } = eachItem;
+          // console.log(`image when navTitle is ${navTitle} = ${image}`);
+          // console.log(`array generated = ${list}`);
           return (
             <li className="details__mainListItem" key={index}>
               <span className="details__innerTitle">
@@ -54,7 +56,8 @@ const Details = ({ mainTitle, list = [], largerScreens, desktop }) => {
                 {/* show this portion when largerScreens isn't passed in as a prop from Details component's Parent */}
                 {!largerScreens && <ArrowForwardIosIcon />}
               </span>
-              {items.length !== 0 && (
+              {/* if the items array isn't empty render this */}
+              {items.length !== 0 ? (
                 <ul className="details__innerNav">
                   {items.map((innerItem, index) => (
                     <li className="details__innerListItem" key={index}>
@@ -62,6 +65,15 @@ const Details = ({ mainTitle, list = [], largerScreens, desktop }) => {
                     </li>
                   ))}
                 </ul>
+              ) : (
+                // else if an empty list item is passed AND an image property is supplied
+                <>
+                  {image && (
+                    <section className="details__imgContainer">
+                      <img src={image} alt="LG" className="details__img" />
+                    </section>
+                  )}
+                </>
               )}
             </li>
           );

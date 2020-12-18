@@ -7,12 +7,17 @@
   left: 0;
   right: 0;
   background-color: #fff;
+  max-width: 1300px;
+  /* margin-left: 0.6rem; */
+  margin: 0 auto;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 0.11rem ridge var(--lg-clr);
+  border-top: 0.11rem ridge transparent;
+  transition: var(--transition);
 }
 
-.navMoreDetails.isShown {
-  display: block;
-}
-
+.navMoreDetails.isShown,
 .navMoreDetails.isHidden {
   display: none;
 }
@@ -22,12 +27,15 @@
     display: grid;
     padding: 1rem 2rem;
     /* background: ghostwhite; */
-    transition: var(--transition);
+
     /* border: 1px solid black; */
   }
+  .navMoreDetails.isShown {
+    display: block;
+  }
 
-  .navMoreDetails.showBorder {
-    /* border-bottom: 1px solid rgb(204, 123, 204); */
+  .navMoreDetails.isHidden {
+    display: none;
   }
   .navMoreDetails .details__nav {
     display: grid;

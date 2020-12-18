@@ -1,3 +1,4 @@
+// import img from "../../../assets/africa_gnb_genuine.webp";
 export default {
   // tv object
   tv: {
@@ -57,6 +58,8 @@ export default {
       {
         navTitle: "Freezer",
         items: [],
+        // africa_it_gnb_a4,
+        image: "../../../../items/refrigerator2.jpg",
       },
       {
         navTitle: "Cooking Appliances",
@@ -70,6 +73,7 @@ export default {
       {
         navTitle: "DishWashers",
         items: [],
+        image: "../../../../items/dishWasher5.jpg",
       },
       {
         navTitle: "Washing Machines",
@@ -84,10 +88,12 @@ export default {
       {
         navTitle: "Dryers",
         items: [],
+        image: "../../../../items/dryer.jpg",
       },
       {
         navTitle: "Vacuum Cleaners",
         items: [],
+        image: "../../../../items/vacuum.jpg",
       },
       {
         navTitle: "DISCOVER",
@@ -109,14 +115,17 @@ export default {
       {
         navTitle: "Light Commercial Air Conditioners",
         items: [],
+        image: "../../../../items/commercialAC.jpg",
       },
       {
         navTitle: "Split Air Conditioners",
-        items: [""],
+        items: [],
+        image: "../../../../items/splitAC.jpg",
       },
       {
         navTitle: "Window Air Conditioners",
-        items: [""],
+        items: [],
+        image: "../../../../items/windowAC.jpg",
       },
     ],
   },
@@ -129,9 +138,11 @@ export default {
       {
         navTitle: "Monitors",
         items: [],
+        image: "../../../../items/computer.jpg",
       },
     ],
   },
+
   supportHome: {
     mainTitle: "support home",
     // list to iterate over
@@ -148,6 +159,7 @@ export default {
       {
         navTitle: "GENUINE CHECK",
         items: [],
+        image: "../../../../items/africa_gnb_genuine.webp",
       },
       {
         navTitle: "CONTACT US",
@@ -188,6 +200,7 @@ export default {
       {
         navTitle: "GENUINE CHECK",
         items: [],
+        image: "../../../../items/africa_gnb_genuine.webp",
       },
       {
         navTitle: "CONTACT US",
@@ -203,6 +216,7 @@ export default {
       {
         navTitle: "REGISTER A PRODUCT",
         items: [],
+        image: "../../../../items/register1.png",
       },
       {
         navTitle: "ANNOUNCEMENT",
@@ -215,6 +229,7 @@ export default {
       {
         navTitle: "MY ACCOUNT",
         items: ["My Profile", "My Products", "My Inquiry Status"],
+        image: "../../../../items/register2.png",
       },
     ],
   },

@@ -81,9 +81,11 @@
 }
 .slideCard.lastSlide {
   transform: translateX(-100%);
+  /* display: none; */
 }
 .slideCard.nextSlide {
   transform: translateX(100%);
+  /* display: none; */
 }
 
 @media (min-width: 768px) {
