@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import HomeIcon from "@material-ui/icons/Home";
 import "./details.css";
@@ -61,7 +61,9 @@ const Details = ({ mainTitle, list = [], largerScreens, desktop }) => {
                 <ul className="details__innerNav">
                   {items.map((innerItem, index) => (
                     <li className="details__innerListItem" key={index}>
-                      {innerItem}
+                      <Link to="/" className="details__innerLink">
+                        {innerItem}
+                      </Link>
                     </li>
                   ))}
                 </ul>

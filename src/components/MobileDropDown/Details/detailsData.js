@@ -203,12 +203,12 @@ export default {
         image: "../../../../items/africa_gnb_genuine.webp",
       },
       {
-        navTitle: "CONTACT US",
+        navTitle: "CONTACT ME",
         items: [
-          "Email",
-          "Telephone",
+          "Email = tunde.j.adeleye@gmail.com",
+          "Telephone = 09024282995",
           "Inquiry Status",
-          "Customer, Feedback",
+          "Customer Feedback",
           "WhatsApp",
           "Care & Delight Mobile App",
         ],
@@ -219,8 +219,12 @@ export default {
         image: "../../../../items/register1.png",
       },
       {
-        navTitle: "ANNOUNCEMENT",
-        items: [],
+        navTitle: "ANNOUNCEMENTS",
+        items: [
+          "lg.com/africa got cloned",
+          "This clone was recreated using react",
+          "Some improvements were added",
+        ],
       },
       {
         navTitle: "REPAIR SERVICE",

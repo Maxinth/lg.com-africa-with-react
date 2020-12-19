@@ -12,15 +12,18 @@
   /* top: 390; */
   /* right: 40px;
   left: 140px; */
+  top: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* margin-top: 1.4rem; */
 }
 
 .mainSlide__circleIcon {
   font-size: 1rem !important;
   color: rgb(51, 50, 50);
+  /* color: #fff; */
   cursor: pointer;
 }
 

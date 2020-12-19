@@ -8,7 +8,7 @@
 }
 
 .mainTitle__heading {
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.7rem + 1vw);
   transition: var(--transition);
 }
 
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
-
+  font-size: calc(0.5rem + 1vw);
   text-transform: uppercase;
 }
 
@@ -36,5 +36,9 @@
 @media (min-width: 1326px) {
   .mainTitle__heading {
     font-size: 1.8rem;
+  }
+
+  .mainTitle__learnMore {
+    font-size: 1rem;
   }
 }

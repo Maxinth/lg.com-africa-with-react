@@ -48,6 +48,10 @@
   transition: var(--transition);
 }
 
+.slideCard__text {
+  font-size: calc(0.5rem + 1vw);
+  transition: var(--transition);
+}
 .slideCard__Header,
 .slideCard__text {
   color: inherit;
@@ -96,5 +100,15 @@
 
   .slideCard__content {
     opacity: 1;
+  }
+}
+
+@media (min-width: 1326px) {
+  .slideCard__Header {
+    font-size: 1.8rem;
+  }
+
+  .slideCard__text {
+    font-size: 1rem;
   }
 }

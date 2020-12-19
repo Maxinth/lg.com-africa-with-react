@@ -59,3 +59,10 @@
     margin-top: unset;
   }
 }
+
+@media (min-width: 1400px) {
+  .navMoreDetails {
+    margin: unset;
+    margin-left: 3rem;
+  }
+}
