@@ -15,14 +15,19 @@ const AppProvider = ({ children }) => {
   const toggleSearch = () => setIsSearchInView(!isSearchInView);
   const closeSearchBox = () => setIsSearchInView(false);
 
-  // state for bringing productItems into view on screen sizes between 768px and 1326px
+  // state for bringing productItems into view on screen sizes between 768px and 1326px - products goes true
+  // and tv, ac, etc come into view, when each of these are hovered on the state defined in line 68-78 handle the rest
   const [showItems, setShowItems] = useState({
     products: false,
     support: false,
   });
 
-  const productsItemsInView = () =>
-    setShowItems({ products: true, support: false });
+  // show productItems on >= 768px
+  const productsItemsInView = () => {
+    return setShowItems({ products: true, support: false });
+  };
+
+  // hide both support and product
   const bothItemsHidden = () =>
     setShowItems({
       products: false,
@@ -37,17 +42,24 @@ const AppProvider = ({ children }) => {
     homeAppliances: false,
     ac: false,
     computer: false,
-    support: false,
   };
-  const [showDetails, setShowDetails] = useState(productItemsData);
+
+  // state to bring display into view when clicked (on MOBILE)
+  const [showDetails, setShowDetails] = useState({
+    ...productItemsData,
+    support: false,
+  });
 
   const backToInitial = () => {
-    setShowDetails(productItemsData);
+    setShowDetails({
+      ...productItemsData,
+      support: false,
+    });
   };
 
   const makeCurrentItem = (id) => {
     toggleNavItems();
-    // if (e.target.id === id) {
+
     setShowDetails({
       tv: false,
       homeAppliances: false,
@@ -68,7 +80,6 @@ const AppProvider = ({ children }) => {
       homeAppliances: false,
       ac: false,
       computer: false,
-      support: false,
       [`${id}`]: true,
     });
 

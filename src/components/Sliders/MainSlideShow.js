@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import SlideCard from "./SlideCard/SlideCard";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import data from "./SlideCard/slideData";
 import "./mainSlide.css";
+import useSlider from "../useSlider";
 
 function MainSlideShow() {
-  const [items] = useState(data);
-  const [index, setIndex] = useState(0);
+  const [items, index, setIndex] = useSlider(data);
 
-  useEffect(() => {
-    const lastIndex = items.length - 1;
-    if (index < 0) {
-      setIndex(lastIndex);
-    }
-    if (index > lastIndex) {
-      setIndex(0);
-    }
-  }, [index, items]);
-
+  // to make slide change every 5s
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1);
@@ -27,7 +18,7 @@ function MainSlideShow() {
     return () => {
       clearInterval(slider);
     };
-  }, [index]);
+  }, [index, setIndex]);
 
   return (
     <section className="mainSlide">

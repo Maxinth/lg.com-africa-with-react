@@ -80,6 +80,14 @@ const MobileDropDown = () => {
       className="mobileDropDown"
       style={{ height: `${currentHeight}px` }}
     >
+      {/* backdrop only gets shown when the bar men currentItem and set to true */}
+      {bar && (
+        <div
+          className="mobileDropDown__backdrop"
+          onClick={toggleBar} // toggleBar closes the bar when the backdrop currentItem upon
+          style={{ top: `${topOffsetByItem()}px` }}
+        ></div>
+      )}
       <div ref={dropDiv}>
         <h3>
           <span className={`mobileDropDown__titleText ${titleTextClass}`}>
@@ -139,14 +147,14 @@ const MobileDropDown = () => {
           {!showNavItems && showDetails.computer && <ComputerProducts />}
           {!showNavItems && showDetails.support && <SupportHome />}
         </section>
-        {/* backdrop only gets shown when the bar men currentItem and set to true */}
-        {bar && (
+
+        {/* {bar && (
           <div
             className="mobileDropDown__backdrop"
             onClick={toggleBar} // toggleBar closes the bar when the backdrop currentItem upon
             style={{ top: `${topOffsetByItem()}px` }}
           ></div>
-        )}
+        )} */}
       </div>
     </section>
   );

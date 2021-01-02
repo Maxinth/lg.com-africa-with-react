@@ -1,0 +1,120 @@
+.clickSlideCard {
+  border: thin solid rgb(202, 200, 200);
+  width: 300px;
+  padding: 2rem 1rem;
+  font-family: "Open sans", sans-serif;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 4px 9px black;
+  background-color: #fff;
+  flex: 1;
+}
+
+.clickSlideCard__headerText {
+  text-transform: uppercase;
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+}
+.clickSlideCard__img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.clickSlideCard__text {
+  /* padding: 3rem 0; */
+}
+
+.clickSlideCard {
+  position: absolute;
+  /* top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+  opacity: 0;
+  transition: all 0.9s linear;
+}
+.clickSlideCard.activeSlide {
+  opacity: 1;
+  /* transform: translateX(0); */
+  transform: translate3d(0px, 0px, 0px) translateX(0%);
+  z-index: 100;
+}
+.clickSlideCard.lastSlide {
+  /* transform: translateX(-100%); */
+  /* opacity: 0; */
+  transform: translate3d(341px, 0px, 0px) translateX(100%);
+  /* display: none; */
+  z-index: 10;
+}
+.clickSlideCard.nextSlide {
+  /* transform: translateX(100%); */
+  transform: translate3d(-682px, 0px, 0px) translateX(-100%);
+  /* display: none; */
+  z-index: 1;
+}
+
+@media (min-width: 375px) {
+  .clickSlideCard {
+    width: 330px;
+  }
+}
+@media (min-width: 411px) {
+  .clickSlideCard {
+    width: 310px;
+  }
+}
+@media (min-width: 414px) {
+  .clickSlideCard {
+    width: 320px;
+  }
+}
+@media (min-width: 667px) {
+  .clickSlideCard,
+  .clickSlideCard.activeSlide,
+  .clickSlideCard.lastSlide,
+  .clickSlideCard.clickSlideCard.nextSlide {
+    opacity: 1;
+  }
+
+  .clickSlideCard.nextSlide {
+    transform: translate3d(-682px, 0px, 0px);
+  }
+
+  .clickSlideCard.activeSlide {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .clickSlideCard.lastSlide {
+    transform: translate3d(341px, 0px, 0px);
+  }
+
+  .clickSlideCard.activeSlide,
+  .clickSlideCard.lastSlide {
+    margin-left: -21rem;
+  }
+
+  .clickSlideCard.lastSlide {
+    margin-left: -23rem;
+  }
+}
+@media (min-width: 768px) {
+  .clickSlideCard {
+    /* width: 500px; */
+  }
+}
+@media (min-width: 1042px) {
+  .clickSlideCard {
+    position: static;
+    /* max-width: 400px; */
+    z-index: unset;
+    margin-right: 1rem;
+  }
+
+  .clickSlideCard.lastSlide,
+  .clickSlideCard.nextSlide,
+  .clickSlideCard.activeSlide {
+    transform: unset;
+    margin-left: unset;
+    /* margin-right: unset; */
+    z-index: unset;
+  }
+}

@@ -24,7 +24,6 @@ const Details = ({ mainTitle, list = [], largerScreens, desktop }) => {
     backToInitial();
   };
 
-  console.log(list);
   return (
     <section className="details">
       <h4 className="details__mainTitle">
@@ -47,8 +46,7 @@ const Details = ({ mainTitle, list = [], largerScreens, desktop }) => {
       <ul className="details__nav">
         {list.map((eachItem, index) => {
           const { navTitle, items, image } = eachItem;
-          // console.log(`image when navTitle is ${navTitle} = ${image}`);
-          // console.log(`array generated = ${list}`);
+
           return (
             <li className="details__mainListItem" key={index}>
               <span className="details__innerTitle">
