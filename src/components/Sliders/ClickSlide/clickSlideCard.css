@@ -1,5 +1,6 @@
 .clickSlideCard {
   border: thin solid rgb(202, 200, 200);
+
   width: 300px;
   padding: 2rem 1rem;
   font-family: "Open sans", sans-serif;
@@ -20,10 +21,6 @@
   width: 100%;
 }
 
-.clickSlideCard__text {
-  /* padding: 3rem 0; */
-}
-
 .clickSlideCard {
   position: absolute;
   /* top: 0;
@@ -31,7 +28,7 @@
   width: 100%;
   height: 100%; */
   opacity: 0;
-  transition: all 0.9s linear;
+  transition: all 0.4s linear;
 }
 .clickSlideCard.activeSlide {
   opacity: 1;

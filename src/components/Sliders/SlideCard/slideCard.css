@@ -68,6 +68,7 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: calc(0.2rem + 1vw);
+  cursor: pointer;
 }
 
 .slideCard {

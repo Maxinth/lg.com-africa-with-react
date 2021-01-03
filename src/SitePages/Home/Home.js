@@ -1,4 +1,5 @@
 import React from "react";
+import LgCards from "../../components/LgCards/LgCards";
 import MainTitle from "../../components/MainTitle/MainTitle";
 import Navbar from "../../components/Navbar/Navbar";
 import ClickSlide from "../../components/Sliders/ClickSlide/ClickSlide";
@@ -13,6 +14,7 @@ const Home = () => {
       <MainSlideShow />
       <ClickSlide />
       <TvSlide />
+      <LgCards />
     </section>
   );
 };
