@@ -85,6 +85,7 @@ const Navbar = () => {
             <section className="navbar__bottomLinks">
               <div className="navbar__bottomLeft">
                 <NavProductItems />
+
                 <div className="navbar__productAndSupport">
                   <NavLink
                     to="/"

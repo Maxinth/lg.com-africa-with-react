@@ -1,0 +1,128 @@
+.tvCard {
+  width: 100%;
+  max-width: 1400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.tvCard__container {
+  width: 100%;
+  position: relative;
+}
+
+.tvCard__textContainer.text-white {
+  color: #fff;
+}
+.tvCard__textContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 150px;
+  left: 30px;
+  right: 30px;
+  transition: var(--transition);
+}
+.tvCard__img {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+  max-width: 768px;
+}
+
+.tvCard.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+.tvCard.lastSlide {
+  /* transform: translateX(-100%); */
+  /* display: none; */
+  opacity: 0;
+}
+.tvCard.nextSlide {
+  /* transform: translateX(100%); */
+  /* display: none; */
+  opacity: 0;
+}
+.tvCard__Text {
+  font-size: calc(0.7rem + 1vw);
+  transition: var(--transition);
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  color: inherit;
+}
+.tvCard__btn {
+  margin-top: 0.5rem;
+  padding: 1em 1.5em;
+  background-color: var(--lg-clr);
+  color: #fff !important;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: calc(0.4rem + 1vw);
+  cursor: pointer;
+}
+
+@media (min-width: 500px) {
+  .tvCard__textContainer {
+    top: calc(150px - 10vw);
+  }
+
+  .tvCard__textContainer.text-white {
+    top: calc(190px + 2vw);
+  }
+}
+@media (min-width: 600px) {
+  .tvCard__textContainer {
+    top: 120px;
+  }
+}
+@media (min-width: 768px) {
+  .tvCard__img {
+    max-width: 1400px;
+    object-fit: contain;
+    height: auto;
+  }
+  .tvCard__textContainer {
+    top: 40px;
+    font-size: 0.9rem;
+  }
+
+  .tvCard__btn {
+    font-size: 0.9rem;
+  }
+
+  .tvCard__textContainer.text-white {
+    top: 70px;
+  }
+
+  .tvCard__Text {
+    font-size: inherit;
+  }
+}
+
+@media (min-width: 770px) {
+  .tvCard__textContainer {
+    top: calc(40px + 2vw);
+  }
+
+  .tvCard__textContainer.text-white {
+    top: calc(70px + 3vw);
+  }
+}
+@media (min-width: 1100px) {
+  .tvCard__textContainer {
+    top: 80px;
+  }
+}
+@media (min-width: 1300px) {
+  .tvCard__textContainer {
+    top: 120px;
+  }
+}

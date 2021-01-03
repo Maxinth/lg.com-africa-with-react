@@ -121,3 +121,26 @@
     top: 360px;
   }
 }
+@media (min-width: 1000px) {
+  .prev,
+  .next {
+    display: none;
+  }
+}
+@media (min-width: 1300px) {
+  .prev,
+  .next {
+    top: 300px;
+    display: block;
+  }
+
+  .mainSlide {
+    margin-bottom: 50rem;
+  }
+}
+@media (min-width: 1400px) {
+  .prev,
+  .next {
+    top: 360px;
+  }
+}

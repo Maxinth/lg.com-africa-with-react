@@ -26,6 +26,7 @@ const SlideCard = ({
             {topHeaderText && (
               <p className="slideCard__Text">{topHeaderText}</p>
             )}
+
             {topBtnText && (
               <button type="button" className="slideCard__button">
                 {topBtnText}

@@ -22,7 +22,8 @@
   max-width: 100%;
   margin-right: -1.5rem;
   text-align: center;
-  transition: var(--transition);
+  transition: all 0.1s linear;
+  font-weight: 400;
 }
 
 .navProducts .navbar__Links:first-child {
@@ -39,8 +40,15 @@
   font-weight: 700;
 }
 
-.navProducts .navbar__Links:hover {
+.navProducts .navbar__Links:hover,
+.navProducts .navbar__Links.isActive {
   border-bottom: 3px solid var(--lg-clr);
+}
+
+.navProducts .navbar__Links.isActive {
+  color: var(--lg-clr);
+  transform: scale(1.05);
+  font-weight: 900;
 }
 
 @media (min-width: 768px) {

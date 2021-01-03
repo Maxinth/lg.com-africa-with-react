@@ -1,0 +1,38 @@
+.tvSlide {
+  margin-top: 9rem;
+}
+
+.tvSlide__container {
+  /* overflow: hidden; */
+  display: flex;
+  position: relative;
+}
+
+.tvSlide__circle {
+  position: relative;
+  /* bottom: 10px; */
+  top: 10px;
+  left: auto;
+  right: auto;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.tvSlide__circle > svg {
+  color: ghostwhite !important;
+}
+
+.tvSlide__circleIcon.lg {
+  color: var(--lg-clr) !important;
+}
+
+@media (min-width: 768px) {
+  .tvSlide {
+    margin-top: 19rem;
+  }
+}
+@media (min-width: 1042px) {
+  .tvSlide {
+    margin-top: -1rem;
+  }
+}

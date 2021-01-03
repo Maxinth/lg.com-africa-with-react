@@ -3,7 +3,7 @@
   border-bottom: unset;
   /* position: relative; */
   position: absolute;
-  z-index: 100;
+  z-index: 200;
   left: 0;
   right: 0;
   background-color: #fff;
