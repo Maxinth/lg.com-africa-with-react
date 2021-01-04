@@ -17,14 +17,14 @@ const ItemsTitleTab = () => {
     backward: "BACKWARD",
   };
 
-  const initialState = 0;
+  const initialState = 25;
   const reducer = (state, action) => {
     switch (action) {
       case actionType.forward:
-        return state + 25;
+        return state + 20;
 
       case actionType.backward:
-        return state - 25;
+        return state - 20;
       default:
         return state;
     }
@@ -61,15 +61,22 @@ const ItemsTitleTab = () => {
   return (
     <section className="itemsTab">
       <div className="itemsTab__container">
-        <button className="itemsTab__controlsContainer" onClick={backwardClick}>
+        <button
+          className="itemsTab__controlsContainer"
+          onClick={backwardClick}
+          disabled={clickCount === -3}
+        >
           <ArrowBackIosIcon className="itemsTab__controls" />
         </button>
 
         <section
           className="itemsTab__items"
-          style={{ transform: translateItems(val), border: "1px solid red" }}
+          style={{ transform: translateItems(val) }}
         >
-          <span className="itemsTab__item">most popular</span>
+          <span className="itemsTab__item">
+            <span className="mod">most</span>
+            popular
+          </span>
           <span className="itemsTab__item">exciting new offers for you</span>
           <span className="itemsTab__item">newest</span>
           <span className="itemsTab__item">highly rated</span>
