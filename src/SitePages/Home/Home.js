@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import ClickSlide from "../../components/Sliders/ClickSlide/ClickSlide";
 import MainSlideShow from "../../components/Sliders/MainSlideShow";
 import TvSlide from "../../components/Sliders/TvSlide/TvSlide";
+import TabWithSlides from "../../components/TabWithSlides/TabWithSlides";
 import "./home.css";
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <ClickSlide />
       <TvSlide />
       <LgCards />
+      <TabWithSlides />
     </section>
   );
 };
