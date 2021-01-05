@@ -1,0 +1,30 @@
+.tabSlide {
+  position: relative;
+}
+.tabSlide__itemsContainer {
+  display: flex;
+}
+
+.tabSlide__itemsContainer .tabSlideCard {
+  position: absolute;
+}
+
+.tabSlide__controls {
+  position: relative;
+  left: 0;
+  top: 90px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  /* background-color: #fff; */
+  width: 30px;
+  /* height: 400px; */
+}
+
+.tabSlide__circleControls {
+  font-size: 1.3rem !important;
+}
+.tabSlide__circleControls.lg {
+  color: var(--lg-clr) !important;
+}

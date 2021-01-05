@@ -1,6 +1,9 @@
 .itemsTab {
   width: 100%;
   max-width: 1400px;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(209, 209, 209);
+  /* box-shadow: -7px 5px 30px rgb(209, 207, 207); */
 }
 
 .itemsTab__container {
@@ -56,7 +59,7 @@
   /* overflow-x: hidden; */
   /* overflow-x: auto; */
   transition: all 0.8s ease-in-out;
-  padding: 1rem 0;
+  padding: 0.2rem 0;
   /* transform: translateX(-10%); */
 }
 
@@ -91,9 +94,9 @@
 .itemsTab__item:hover {
   color: #333;
   transform: scale(1.1);
-  text-decoration: underline;
+  /* text-decoration: underline;
   text-decoration-thickness: 3px;
-  text-decoration-color: var(--lg-clr);
+  text-decoration-color: var(--lg-clr); */
   /* border-bottom: 2px solid var(--lg-clr); */
 }
 .itemsTab__item:nth-child(2) {

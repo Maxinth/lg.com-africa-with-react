@@ -1,0 +1,96 @@
+.tabSlideCard {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+}
+.tabSlideCard__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tabSlideCard__img {
+  object-fit: contain;
+  width: 100%;
+  max-width: 250px;
+  /* max-width: 40px; */
+}
+
+.tabSlideCard__description {
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.tabSlideCard__star {
+  font-size: 1rem !important;
+}
+
+.tabSlideCard__star.lg {
+  color: var(--lg-clr);
+}
+.tabSlideCard__itemQuantity {
+  font-size: 0.9rem;
+  padding-bottom: 0.3rem;
+  margin-left: 0.2rem;
+}
+.tabSlideCard__starContainer {
+  display: flex;
+  align-items: center;
+}
+.tabSlideCard__buyCompare {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabSlideCard__btn {
+  border: none;
+  outline: none;
+  background-color: rgb(165, 0, 52);
+  color: #fff;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+  font-weight: 900;
+}
+
+.tabSlideCard__compare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(156, 151, 151);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.tabSlideCard__compareIcon {
+  font-size: 1rem !important;
+}
+
+.tabSlideCard {
+  position: absolute;
+  /* top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+}
+.tabSlideCard.activeSlide {
+  opacity: 1;
+  /* transform: translateX(0); */
+  transform: translate3d(0px, 0px, 0px) translateX(0%);
+  z-index: 100;
+}
+.tabSlideCard.lastSlide {
+  /* transform: translateX(-100%); */
+  /* opacity: 0; */
+  transform: translate3d(341px, 0px, 0px) translateX(100%);
+  /* display: none; */
+  z-index: 10;
+}
+.tabSlideCard.nextSlide {
+  /* transform: translateX(100%); */
+  transform: translate3d(-682px, 0px, 0px) translateX(-100%);
+  /* display: none; */
+  z-index: 1;
+}
