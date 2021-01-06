@@ -1,14 +1,20 @@
 import React from "react";
 import GenerateTabSlideCard from "../GenerateTabSlideCard";
 import highlyRatedItems from "./data";
+import { motion } from "framer-motion";
+import { tabSlideVariant, variantProps } from "../../../variants";
 
 const HighlyRated = () => {
   return (
-    <section className="highlyRated">
+    <motion.section
+      className="highlyRated"
+      variants={tabSlideVariant}
+      {...variantProps}
+    >
       <section className="highlyRated__container">
         <GenerateTabSlideCard data={highlyRatedItems} />
       </section>
-    </section>
+    </motion.section>
   );
 };
 

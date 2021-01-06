@@ -1,13 +1,20 @@
 import React from "react";
 import GenerateTabSlideCard from "../GenerateTabSlideCard";
 import excitingNewOffers from "./data";
+import { motion } from "framer-motion";
+import { tabSlideVariant, variantProps } from "../../../variants";
+
 const ExcitingNewOffers = () => {
   return (
-    <section className="newOffers">
+    <motion.section
+      className="newOffers"
+      variants={tabSlideVariant}
+      {...variantProps}
+    >
       <section className="newOffers__container">
         <GenerateTabSlideCard data={excitingNewOffers} />
       </section>
-    </section>
+    </motion.section>
   );
 };
 

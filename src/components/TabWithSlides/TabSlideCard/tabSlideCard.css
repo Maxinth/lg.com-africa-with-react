@@ -55,6 +55,10 @@
   text-transform: uppercase;
   margin: 0.5rem 0;
   font-weight: 900;
+  transition: all 0.3s ease-in-out;
+}
+.tabSlideCard__btn:hover {
+  transform: scale(1.1);
 }
 
 .tabSlideCard__compare {

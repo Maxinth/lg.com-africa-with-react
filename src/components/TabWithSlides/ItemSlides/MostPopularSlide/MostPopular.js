@@ -1,14 +1,20 @@
 import React from "react";
 import mostPopularItems from "./data";
 import GenerateTabSlideCard from "../GenerateTabSlideCard";
+import { motion } from "framer-motion";
+import { tabSlideVariant, variantProps } from "../../../variants";
 
 const MostPopular = () => {
   return (
-    <section className="mostPopularItems">
+    <motion.section
+      className="mostPopularItems"
+      variants={tabSlideVariant}
+      {...variantProps}
+    >
       <section className="mostPopularItems__container">
         <GenerateTabSlideCard data={mostPopularItems} />
       </section>
-    </section>
+    </motion.section>
   );
 };
 

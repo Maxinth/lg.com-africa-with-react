@@ -5,7 +5,7 @@ import "./itemsTitleTab.css";
 
 // let slideValue = 0;
 
-const ItemsTitleTab = () => {
+const ItemsTitleTab = ({ changeTab }) => {
   // useReducer to monitor the translation due to clicks on the control arrows
 
   // action types
@@ -59,7 +59,10 @@ const ItemsTitleTab = () => {
 
   // state to track which item was clicked
   const [itemClicked, setItemClicked] = useState("mostPopular");
-  const handleClick = (id) => setItemClicked(id);
+  const handleClick = (tab) => {
+    setItemClicked(tab); // tracking item based on className
+    changeTab(tab); // tracking / changing state of tabItems
+  };
   const colorByClick = (id) => (itemClicked === id ? "lg" : "");
 
   return (

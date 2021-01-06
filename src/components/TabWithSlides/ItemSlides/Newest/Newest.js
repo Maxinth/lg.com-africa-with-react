@@ -1,13 +1,20 @@
 import React from "react";
 import GenerateTabSlideCard from "../GenerateTabSlideCard";
 import newestItems from "./data";
+import { motion } from "framer-motion";
+import { tabSlideVariant, variantProps } from "../../../variants";
+
 const Newest = () => {
   return (
-    <section className="newest">
+    <motion.section
+      className="newest"
+      variants={tabSlideVariant}
+      {...variantProps}
+    >
       <section className="newest__container">
         <GenerateTabSlideCard data={newestItems} />
       </section>
-    </section>
+    </motion.section>
   );
 };
 

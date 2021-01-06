@@ -3,6 +3,11 @@ import TabSlideCard from "../TabSlideCard/TabSlideCard";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import "./generateTabSlide.css";
 import useSlider from "../../useSlider";
+import {
+  tabSlideControls as tabSlideControlsVariant,
+  variantProps,
+} from "../../variants";
+import { motion } from "framer-motion";
 
 const GenerateTabSlideCard = ({ data = [] }) => {
   const [items, index, setIndex] = useSlider(data);
@@ -23,7 +28,12 @@ const GenerateTabSlideCard = ({ data = [] }) => {
           return <TabSlideCard key={item.id} {...item} position={position} />;
         })}
       </div>
-      <section className="tabSlide__controls">
+
+      <motion.section
+        className="tabSlide__controls"
+        variants={tabSlideControlsVariant}
+        {...variantProps}
+      >
         {items.map((item, itemIndex) => {
           const colorByItem = (currentItemIndex) =>
             index === currentItemIndex ? "lg" : "";
@@ -35,7 +45,7 @@ const GenerateTabSlideCard = ({ data = [] }) => {
             />
           );
         })}
-      </section>
+      </motion.section>
     </section>
   );
 };
