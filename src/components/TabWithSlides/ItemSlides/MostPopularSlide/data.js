@@ -6,6 +6,7 @@ export default [
     rating: 0,
     quantity: 0,
     id: 0,
+    alt: " ac inverter",
   },
   {
     imageSrc: "../../../../../mostPopularItems/tv-1.jpg",
@@ -13,6 +14,7 @@ export default [
     rating: 0,
     quantity: 0,
     id: 1,
+    alt: "tv ",
   },
   {
     imageSrc: "../../../../../mostPopularItems/LHD.jpg",
@@ -20,6 +22,7 @@ export default [
     rating: 5,
     quantity: 1,
     id: 2,
+    alt: " home theatre",
   },
   {
     imageSrc: "../../../../../mostPopularItems/oven-1.jpg",
@@ -27,6 +30,7 @@ export default [
     rating: 1,
     quantity: 1,
     id: 3,
+    alt: " microwave oven",
   },
   {
     imageSrc: "../../../../../mostPopularItems/LHT-1.jpg",
@@ -34,6 +38,7 @@ export default [
     rating: 0,
     quantity: 1,
     id: 4,
+    alt: "home theatre ",
   },
   {
     imageSrc: "../../../../../mostPopularItems/LHD-2.jpg",
@@ -41,6 +46,7 @@ export default [
     rating: 4.5,
     quantity: 2,
     id: 5,
+    alt: " home theatre",
   },
   {
     imageSrc: "../../../../../mostPopularItems/Basic_350.jpg",
@@ -48,6 +54,7 @@ export default [
     rating: 0,
     quantity: 0,
     id: 6,
+    alt: "refrigerator ",
   },
 
   {
@@ -56,6 +63,7 @@ export default [
     rating: 0,
     quantity: 0,
     id: 7,
+    alt: " tv ",
   },
   {
     imageSrc: "../../../../../mostPopularItems/TV-2.jpg",
@@ -63,5 +71,6 @@ export default [
     rating: 5,
     quantity: 1,
     id: 8,
+    alt: "tv ",
   },
 ];

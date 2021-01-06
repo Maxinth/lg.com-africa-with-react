@@ -9,12 +9,13 @@ const TabSlideCard = ({
   description,
   rating,
   quantity,
+  alt,
   position,
 }) => {
   return (
     <article className={`tabSlideCard ${position}`}>
       <section className="tabSlideCard__container">
-        <img src={imageSrc} alt="tv" className="tabSlideCard__img" />
+        <img src={imageSrc} alt={`LG ${alt}`} className="tabSlideCard__img" />
         <p className="tabSlideCard__description">{description}</p>
 
         <div className="tabSlideCard__starContainer">
