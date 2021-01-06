@@ -1,6 +1,7 @@
 import React from "react";
 import ExcitingNewOffers from "./ItemSlides/ExicitingNewOffers/ExcitingNewOffers";
 import MostPopular from "./ItemSlides/MostPopularSlide/MostPopular";
+import Newest from "./ItemSlides/Newest/Newest";
 import ItemsTitleTab from "./ItemsTitleTab";
 
 const TabWithSlides = () => {
@@ -8,7 +9,8 @@ const TabWithSlides = () => {
     <section className="tabWithSlides">
       <ItemsTitleTab />
       {/* <MostPopular /> */}
-      <ExcitingNewOffers />
+      {/* <ExcitingNewOffers /> */}
+      <Newest />
     </section>
   );
 };
