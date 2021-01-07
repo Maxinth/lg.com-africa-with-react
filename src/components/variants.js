@@ -42,3 +42,20 @@ export const tabSlideControls = {
     },
   },
 };
+
+export const tabSlideControlsCircleVariant = (index) => {
+  return {
+    hidden: {
+      opacity: 0,
+    },
+
+    visible: {
+      opacity: 1,
+      transition: {
+        type: "tween",
+        duration: 0.2,
+        delay: (index + 1) / 10,
+      },
+    },
+  };
+};

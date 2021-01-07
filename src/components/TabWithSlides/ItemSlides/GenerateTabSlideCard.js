@@ -8,6 +8,8 @@ import {
   variantProps,
 } from "../../variants";
 import { motion } from "framer-motion";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 const GenerateTabSlideCard = ({ data = [] }) => {
   const [items, index, setIndex] = useSlider(data);
@@ -27,6 +29,15 @@ const GenerateTabSlideCard = ({ data = [] }) => {
           }
           return <TabSlideCard key={item.id} {...item} position={position} />;
         })}
+      </div>
+
+      <div className="tabSlide__arrowControls">
+        <button className="tabSlide__btn">
+          <ArrowBackIosIcon className="tabSlide__arrowIcon" />
+        </button>
+        <button className="tabSlide__btn">
+          <ArrowForwardIosIcon className="tabSlide__arrowIcon" />
+        </button>
       </div>
 
       <motion.section

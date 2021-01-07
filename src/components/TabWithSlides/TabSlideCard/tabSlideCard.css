@@ -102,3 +102,38 @@
   /* display: none; */
   z-index: 1;
 }
+
+@media (min-width: 768px) {
+  .tabSlideCard {
+    position: static;
+    opacity: 0;
+    flex: 1;
+    /* display: inline; */
+  }
+
+  .tabSlideCard.activeSlide,
+  .tabSlideCard.lastSlide,
+  .tabSlideCard.nextSlide {
+    transform: unset;
+  }
+
+  .tabSlideCard.activeSlide,
+  .tabSlideCard.activeSlide + .tabSlideCard.nextSlide,
+  .tabSlideCard.activeSlide
+    + .tabSlideCard.nextSlide
+    + .tabSlideCard.nextSlide {
+    opacity: 1;
+    /* transform: translateX(0); */
+    transform: translate3d(0px, 0px, 0px) translateX(0%);
+    z-index: 100;
+    width: 900px;
+    margin: 0 1rem;
+    /* padding: 0 2rem; */
+    flex: 2;
+    align-self: flex-start;
+  }
+
+  .tabSlideCard__container {
+    /* display: block; */
+  }
+}

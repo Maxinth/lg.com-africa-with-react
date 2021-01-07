@@ -3,6 +3,8 @@
 }
 .tabSlide__itemsContainer {
   display: flex;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .tabSlide__itemsContainer .tabSlideCard {
@@ -19,6 +21,9 @@
   z-index: 100;
   /* background-color: #fff; */
   width: 30px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 1s ease-in-out;
   /* height: 400px; */
 }
 
@@ -27,4 +32,49 @@
 }
 .tabSlide__circleControls.lg {
   color: var(--lg-clr) !important;
+}
+
+.tabSlide__arrowControls {
+  display: none;
+}
+
+.tabSlide__btn {
+  background: #fff;
+}
+
+.tabSlide__arrowIcon {
+  color: black;
+  font-size: 2.5rem !important;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .tabSlide__controls {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .tabSlide__arrowControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  .tabSlide__arrowIcon {
+    z-index: 300;
+    top: 140px;
+  }
+  .tabSlide__itemsContainer .tabSlideCard {
+    position: static;
+    flex-basis: 300px;
+    flex: 1;
+  }
+
+  .tabSlide__itemsContainer {
+    /* max-width: 5900px; */
+    /* display: block; */
+    /* overflow-x: hidden; */
+    height: 200px;
+  }
 }

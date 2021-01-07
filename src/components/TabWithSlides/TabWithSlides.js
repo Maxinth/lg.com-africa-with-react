@@ -22,13 +22,15 @@ const TabWithSlides = () => {
       [`${tab}`]: true,
     });
   };
+
+  const { mostPopular, newOffers, newest, highlyRated } = currentTabItem;
   return (
     <section className="tabWithSlides">
       <ItemsTitleTab changeTab={changeTab} />
-      {currentTabItem.mostPopular && <MostPopular />}
-      {currentTabItem.newOffers && <ExcitingNewOffers />}
-      {currentTabItem.newest && <Newest />}
-      {currentTabItem.highlyRated && <HighlyRated />}
+      {mostPopular && <MostPopular />}
+      {newOffers && <ExcitingNewOffers />}
+      {newest && <Newest />}
+      {highlyRated && <HighlyRated />}
     </section>
   );
 };
