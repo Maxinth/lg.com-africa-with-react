@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer, useEffect } from "react";
 import TabSlideCard from "../TabSlideCard/TabSlideCard";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import "./generateTabSlide.css";
@@ -11,11 +11,59 @@ import { motion } from "framer-motion";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
+// useReducer to monitor the translation due to clicks on the control arrows
+
+// action types on larger screens
+const actionType = {
+  forward: "FORWARD",
+  backward: "BACKWARD",
+  // reset: "RESET",
+};
+
+const initialState = 0;
+const reducer = (state, action) => {
+  switch (action) {
+    case actionType.forward:
+      return state + 30;
+
+    case actionType.backward:
+      return state - 30;
+
+    default:
+      return state;
+  }
+};
+
 const GenerateTabSlideCard = ({ data = [] }) => {
+  const [val, dispatch] = useReducer(reducer, initialState);
   const [items, index, setIndex] = useSlider(data);
+
+  const forwardClick = () => {
+    setIndex(index + 1);
+    dispatch(actionType.forward);
+  };
+
+  const backwardClick = () => {
+    setIndex(index - 1);
+    dispatch(actionType.backward);
+  };
+
+  console.log("index = ", index);
+  console.log("val = ", val);
+  const translateItems = (val) => {
+    return `translateX(${val}%)`;
+  };
+
+  // run the function every time val changes
+  useEffect(() => {
+    translateItems();
+  }, [val]);
   return (
     <section className="tabSlide">
-      <div className="tabSlide__itemsContainer">
+      <div
+        className="tabSlide__itemsContainer"
+        style={{ transform: translateItems(val) }}
+      >
         {items.map((item, slideIndex) => {
           let position = "nextSlide";
           if (slideIndex === index) {
@@ -27,19 +75,22 @@ const GenerateTabSlideCard = ({ data = [] }) => {
           ) {
             position = "lastSlide";
           }
+
           return <TabSlideCard key={item.id} {...item} position={position} />;
         })}
       </div>
 
+      {/* only shown at widths of 768px 0r HIGHER */}
       <div className="tabSlide__arrowControls">
-        <button className="tabSlide__btn">
+        <button className="tabSlide__btn" onClick={backwardClick}>
           <ArrowBackIosIcon className="tabSlide__arrowIcon" />
         </button>
-        <button className="tabSlide__btn">
+        <button className="tabSlide__btn " onClick={forwardClick}>
           <ArrowForwardIosIcon className="tabSlide__arrowIcon" />
         </button>
       </div>
 
+      {/* SHOWN ONLY ON WIDTHS OF 768px AND LESS */}
       <motion.section
         className="tabSlide__controls"
         variants={tabSlideControlsVariant}
