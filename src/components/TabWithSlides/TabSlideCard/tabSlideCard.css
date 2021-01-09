@@ -104,7 +104,7 @@
   z-index: 1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .tabSlideCard {
     position: relative;
     opacity: 1;
@@ -124,21 +124,4 @@
     transform: unset;
     opacity: unset;
   }
-
-  /* .tabSlideCard.activeSlide,
-  .tabSlideCard.activeSlide + .tabSlideCard.nextSlide,
-  .tabSlideCard.activeSlide
-    + .tabSlideCard.nextSlide
-    + .tabSlideCard.nextSlide { */
-  /* opacity: 1; */
-  /* display: block;
-    transform: translateX(0);
-    transform: translate3d(0px, 0px, 0px) translateX(0%);
-    z-index: 100; */
-  /* min-width: 300px; */
-  /* margin: 0 1rem; */
-  /* padding: 0 2rem; */
-  /* flex: 2;
-    align-self: flex-start; */
-  /* } */
 }
