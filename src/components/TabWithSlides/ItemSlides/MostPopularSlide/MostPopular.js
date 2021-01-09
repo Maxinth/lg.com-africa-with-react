@@ -11,7 +11,7 @@ const MostPopular = () => {
       variants={tabSlideVariant}
       {...variantProps}
     >
-      <section className="mostPopularItems__container">
+      <section className="container">
         <GenerateTabSlideCard data={mostPopularItems} />
       </section>
     </motion.section>

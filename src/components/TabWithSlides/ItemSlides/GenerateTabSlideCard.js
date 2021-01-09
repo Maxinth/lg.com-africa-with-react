@@ -24,10 +24,10 @@ const initialState = 0;
 const reducer = (state, action) => {
   switch (action) {
     case actionType.forward:
-      return state + 30;
+      return state + 900;
 
     case actionType.backward:
-      return state - 30;
+      return state - 900;
 
     default:
       return state;
@@ -39,53 +39,66 @@ const GenerateTabSlideCard = ({ data = [] }) => {
   const [items, index, setIndex] = useSlider(data);
 
   const forwardClick = () => {
-    setIndex(index + 1);
+    // setIndex(1);
+    setIndex((index) => index + 1);
     dispatch(actionType.forward);
   };
 
   const backwardClick = () => {
-    setIndex(index - 1);
+    // setIndex(8);
+    setIndex((index) => index - 1);
     dispatch(actionType.backward);
   };
 
   console.log("index = ", index);
   console.log("val = ", val);
   const translateItems = (val) => {
-    return `translateX(${val}%)`;
+    return `translateX(${val}px)`;
   };
 
   // run the function every time val changes
   useEffect(() => {
     translateItems();
+    console.log("translateItems was called");
   }, [val]);
   return (
     <section className="tabSlide">
-      <div
-        className="tabSlide__itemsContainer"
+      <section
+        className="tabSlide__Slides"
         style={{ transform: translateItems(val) }}
       >
-        {items.map((item, slideIndex) => {
-          let position = "nextSlide";
-          if (slideIndex === index) {
-            position = "activeSlide";
-          }
-          if (
-            slideIndex === index - 1 ||
-            (index === 0 && slideIndex === items.length - 1)
-          ) {
-            position = "lastSlide";
-          }
+        <div className="tabSlide__itemsContainer">
+          {items.map((item, slideIndex) => {
+            let position = "nextSlide";
+            if (slideIndex === index) {
+              position = "activeSlide";
+            }
+            if (
+              slideIndex === index - 1 ||
+              (index === 0 && slideIndex === items.length - 1)
+            ) {
+              position = "lastSlide";
+            }
 
-          return <TabSlideCard key={item.id} {...item} position={position} />;
-        })}
-      </div>
+            return <TabSlideCard key={item.id} {...item} position={position} />;
+          })}
+        </div>
+      </section>
 
       {/* only shown at widths of 768px 0r HIGHER */}
       <div className="tabSlide__arrowControls">
-        <button className="tabSlide__btn" onClick={backwardClick}>
+        <button
+          className="tabSlide__btn"
+          onClick={backwardClick}
+          disabled={val === -900}
+        >
           <ArrowBackIosIcon className="tabSlide__arrowIcon" />
         </button>
-        <button className="tabSlide__btn " onClick={forwardClick}>
+        <button
+          className="tabSlide__btn "
+          onClick={forwardClick}
+          disabled={val === 900}
+        >
           <ArrowForwardIosIcon className="tabSlide__arrowIcon" />
         </button>
       </div>

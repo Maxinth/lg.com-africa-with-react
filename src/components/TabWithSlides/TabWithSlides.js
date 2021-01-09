@@ -4,7 +4,7 @@ import HighlyRated from "./ItemSlides/HighlyRated/HighlyRated";
 import MostPopular from "./ItemSlides/MostPopularSlide/MostPopular";
 import Newest from "./ItemSlides/Newest/Newest";
 import ItemsTitleTab from "./ItemsTitleTab";
-
+import "./tabWithSlides.css";
 const TabWithSlides = () => {
   const [currentTabItem, setCurrentTabItem] = useState({
     mostPopular: true,

@@ -11,7 +11,7 @@ const ExcitingNewOffers = () => {
       variants={tabSlideVariant}
       {...variantProps}
     >
-      <section className="newOffers__container">
+      <section className="container">
         <GenerateTabSlideCard data={excitingNewOffers} />
       </section>
     </motion.section>

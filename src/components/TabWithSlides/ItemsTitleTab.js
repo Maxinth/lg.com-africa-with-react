@@ -48,8 +48,8 @@ const ItemsTitleTab = ({ changeTab }) => {
   };
 
   // function to translate the tab based on the value.
-  const translateItems = (val) => {
-    return `translateX(${val}%)`;
+  const translateItems = (value) => {
+    return `translateX(${value}%)`;
   };
 
   // run the function every time val changes

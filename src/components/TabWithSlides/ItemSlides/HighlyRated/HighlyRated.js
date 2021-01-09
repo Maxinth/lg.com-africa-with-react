@@ -11,7 +11,7 @@ const HighlyRated = () => {
       variants={tabSlideVariant}
       {...variantProps}
     >
-      <section className="highlyRated__container">
+      <section className="container">
         <GenerateTabSlideCard data={highlyRatedItems} />
       </section>
     </motion.section>

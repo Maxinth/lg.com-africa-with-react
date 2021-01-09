@@ -11,7 +11,7 @@ const Newest = () => {
       variants={tabSlideVariant}
       {...variantProps}
     >
-      <section className="newest__container">
+      <section className="container">
         <GenerateTabSlideCard data={newestItems} />
       </section>
     </motion.section>
