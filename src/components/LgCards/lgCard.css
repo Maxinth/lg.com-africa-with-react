@@ -1,9 +1,17 @@
 .lgCards {
   padding: 2rem;
+  transition: margin-bottom 0.4s;
 }
 
 @media (min-width: 768px) {
   .lgCards {
     display: flex;
+    margin-bottom: 4rem;
+  }
+}
+@media (min-width: 1300px) {
+  .lgCards {
+    display: flex;
+    margin-bottom: 5rem;
   }
 }

@@ -2,3 +2,10 @@
   background: #fff;
   padding: 0 2rem;
 }
+
+@media (min-width: 1300px) {
+  .tabWithSlides.highlyRated .tabSlide {
+    border-left: 30px solid transparent;
+    border-right: 9px solid transparent;
+  }
+}

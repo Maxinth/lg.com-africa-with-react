@@ -125,3 +125,13 @@
     opacity: unset;
   }
 }
+
+@media (min-width: 1300px) {
+  .tabSlideCard__description {
+    /* padding: 1rem 1rem; */
+    /* text-align: right; */
+    font-size: 0.8rem;
+    max-width: 250px;
+    color: #333;
+  }
+}

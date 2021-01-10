@@ -143,18 +143,11 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .tabSlide {
     /* width: 100%; */
-    /* border-left: 140px solid transparent;
-    border-right: 110px solid transparent; */
+    border-left: 159px solid transparent;
+    border-right: 169px solid transparent;
     /* margin-bottom: 2rem; */
-  }
-
-  .tabSlide__btn:first-child {
-    /* left: -40px; */
-    /* z-index: 300;
-    margin-left: -50px; */
-    /* margin-right: 4rem; */
   }
 }

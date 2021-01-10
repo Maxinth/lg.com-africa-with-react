@@ -24,8 +24,9 @@ const TabWithSlides = () => {
   };
 
   const { mostPopular, newOffers, newest, highlyRated } = currentTabItem;
+  const highlyRatedBorderFix = highlyRated ? "highlyRated" : "";
   return (
-    <section className="tabWithSlides">
+    <section className={`tabWithSlides ${highlyRatedBorderFix}`}>
       <ItemsTitleTab changeTab={changeTab} />
       {mostPopular && <MostPopular />}
       {newOffers && <ExcitingNewOffers />}
