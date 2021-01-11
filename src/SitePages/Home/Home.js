@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../components/Footer/Footer";
 import LgCards from "../../components/LgCards/LgCards";
 import MainTitle from "../../components/MainTitle/MainTitle";
 import Navbar from "../../components/Navbar/Navbar";
@@ -17,6 +18,7 @@ const Home = () => {
       <TvSlide />
       <LgCards />
       <TabWithSlides />
+      <Footer />
     </section>
   );
 };

@@ -15,7 +15,7 @@
 
 .tabSlide__controls {
   position: relative;
-  left: 0;
+  left: -30px;
   top: 90px;
   bottom: 10px;
   display: flex;

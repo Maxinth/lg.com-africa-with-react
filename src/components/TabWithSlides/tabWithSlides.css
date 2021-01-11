@@ -1,3 +1,7 @@
+.tabWithSlides {
+  margin-bottom: 19rem;
+}
+
 .tabWithSlides .container {
   background: #fff;
   padding: 0 2rem;
@@ -7,5 +11,11 @@
   .tabWithSlides.highlyRated .tabSlide {
     border-left: 30px solid transparent;
     border-right: 9px solid transparent;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tabWithSlides {
+    margin-bottom: 6rem;
   }
 }
