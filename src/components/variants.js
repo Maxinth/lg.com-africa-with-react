@@ -37,8 +37,8 @@ export const tabSlideControls = {
     x: 0,
     transition: {
       type: "tween",
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      // delay: 1,
     },
   },
 };

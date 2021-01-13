@@ -85,7 +85,7 @@ const MobileDropDown = () => {
         <div
           className="mobileDropDown__backdrop"
           onClick={toggleBar} // toggleBar closes the bar when the backdrop currentItem upon
-          // style={{ top: `${topOffsetByItem()}px` }}
+          // style={{ top: `${topOffsetByItem()}px` }} //
         ></div>
       )}
       <div ref={dropDiv}>

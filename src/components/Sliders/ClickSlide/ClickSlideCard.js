@@ -1,5 +1,6 @@
 import React from "react";
 import "./clickSlideCard.css";
+
 const ClickSlideCard = ({ headerText, img, bottomText, position }) => {
   return (
     <article className={`clickSlideCard ${position}`}>

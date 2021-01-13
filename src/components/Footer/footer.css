@@ -29,6 +29,7 @@ footer {
 
 .footer__copyRightInfo {
   font-weight: 700;
+  margin-left: 0.5rem;
 }
 
 @media (min-width: 500px) {
